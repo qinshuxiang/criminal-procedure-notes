@@ -1,6 +1,8 @@
 # 刑事诉讼法笔记
 
-> https://qinshuxiang.github.io/criminal-procedure-notes/
+> 笔记预览：https://qinshuxiang.github.io/criminal-procedure-notes/
+>
+> 2026年法考客观题【精讲卷】刑诉法 众合左宁： https://www.bilibili.com/video/BV1nLBVBPEh6/?share_source=copy_web&vd_source=c7fe14d55a6c34f49e2ec87f410d9724
 
 ## 学习目录
 
@@ -12,3 +14,4 @@
 ## 附录
 
 - [Markdown 写作规范](Markdown%20写作规范.md)
+- [设计风格](设计风格.md)
