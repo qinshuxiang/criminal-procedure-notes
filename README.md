@@ -1,5 +1,7 @@
 # 刑事诉讼法笔记
 
+> https://qinshuxiang.github.io/criminal-procedure-notes/
+
 ## 学习目录
 
 - [01 刑事诉讼三大逻辑](01-刑事诉讼三大逻辑_笔记.md)
