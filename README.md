@@ -17,3 +17,15 @@
 
 - [Markdown 写作规范](Markdown%20写作规范.md)
 - [设计风格](设计风格.md)
+
+---
+
+以后新增或修改 Markdown 后，在这个目录运行：
+
+```
+git add -A 
+git commit -m "Update notes" 
+git push
+```
+
+GitHub Pages 会自动更新。
