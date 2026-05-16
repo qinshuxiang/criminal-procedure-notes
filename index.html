@@ -70,6 +70,10 @@
       line-height: 1.55;
     }
 
+    .sidebar .app-sub-sidebar {
+      display: none !important;
+    }
+
     .search input {
       font-size: 15px;
     }
@@ -106,6 +110,11 @@
         function stripFrontMatter(hook) {
           hook.beforeEach(function(content) {
             return content.replace(/^---\s*[\s\S]*?\s*---\s*/, '');
+          });
+          hook.doneEach(function() {
+            document.querySelectorAll('.app-sub-sidebar').forEach(function(node) {
+              node.remove();
+            });
           });
         },
       ],
