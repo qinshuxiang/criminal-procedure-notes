@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="刑事诉讼法 Markdown 笔记">
+  <title>刑事诉讼法笔记</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <style>
+    :root {
+      --theme-color: #2f5d50;
+      --content-max-width: 920px;
+    }
+
+    body {
+      color: #1f2933;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    .markdown-section {
+      max-width: var(--content-max-width);
+      padding: 32px 28px 48px;
+      line-height: 1.85;
+      font-size: 17px;
+    }
+
+    .markdown-section h1,
+    .markdown-section h2,
+    .markdown-section h3 {
+      color: #111827;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .markdown-section h1 {
+      margin-top: 0;
+      font-size: 2rem;
+    }
+
+    .markdown-section h2 {
+      margin-top: 2.1rem;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 0.35rem;
+    }
+
+    .markdown-section p {
+      margin: 0.85rem 0;
+    }
+
+    .markdown-section img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #e5e7eb;
+      background: #fff;
+    }
+
+    .markdown-section div[align="center"] {
+      margin: 1.25rem 0 2rem;
+      color: #64748b;
+      font-size: 0.95rem;
+    }
+
+    .sidebar {
+      border-right: 1px solid #e5e7eb;
+    }
+
+    .sidebar ul li a {
+      white-space: normal;
+      line-height: 1.55;
+    }
+
+    .search input {
+      font-size: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .markdown-section {
+        padding: 24px 18px 40px;
+        font-size: 16px;
+      }
+
+      .markdown-section h1 {
+        font-size: 1.65rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="app">加载中...</div>
+  <script>
+    window.$docsify = {
+      name: '刑事诉讼法笔记',
+      repo: '',
+      homepage: '01-刑事诉讼三大逻辑_笔记.md',
+      loadSidebar: true,
+      subMaxLevel: 2,
+      auto2top: true,
+      search: {
+        paths: 'auto',
+        placeholder: '搜索文档',
+        noData: '没有结果',
+        depth: 6,
+      },
+      plugins: [
+        function stripFrontMatter(hook) {
+          hook.beforeEach(function(content) {
+            return content.replace(/^---\s*[\s\S]*?\s*---\s*/, '');
+          });
+        },
+      ],
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+</body>
+</html>
