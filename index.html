@@ -5,87 +5,415 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="刑事诉讼法 Markdown 笔记">
   <title>刑事诉讼法笔记</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <style>
     :root {
-      --theme-color: #2f5d50;
-      --content-max-width: 920px;
+      --theme-color: #ffffff;
+      --content-max-width: 980px;
+      --xai-bg: #1f2228;
+      --xai-text: #ffffff;
+      --xai-text-secondary: rgba(255, 255, 255, 0.7);
+      --xai-text-muted: rgba(255, 255, 255, 0.5);
+      --xai-text-faint: rgba(255, 255, 255, 0.3);
+      --xai-border: rgba(255, 255, 255, 0.1);
+      --xai-border-strong: rgba(255, 255, 255, 0.2);
+      --xai-surface: rgba(255, 255, 255, 0.03);
+      --xai-surface-hover: rgba(255, 255, 255, 0.08);
+      --xai-focus: rgba(59, 130, 246, 0.5);
+      --xai-mono: "Geist Mono", ui-monospace, SFMono-Regular, "Roboto Mono",
+        Menlo, Monaco, "Liberation Mono", "DejaVu Sans Mono", "Courier New",
+        monospace;
+      --xai-sans: universalSans, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    html,
+    body {
+      background: var(--xai-bg);
+      color: var(--xai-text);
+      font-family: var(--xai-sans);
     }
 
     body {
-      color: #1f2933;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      overflow-x: hidden;
+    }
+
+    body,
+    .content,
+    .app-nav,
+    .sidebar,
+    .search,
+    .sidebar-toggle {
+      background: var(--xai-bg);
+    }
+
+    a {
+      color: var(--xai-text);
+      text-decoration-color: var(--xai-border-strong);
+      text-underline-offset: 4px;
+    }
+
+    a:hover {
+      color: var(--xai-text-muted);
+      text-decoration-color: var(--xai-text-muted);
+    }
+
+    ::selection {
+      background: rgba(255, 255, 255, 0.2);
+      color: var(--xai-text);
     }
 
     .markdown-section {
       max-width: var(--content-max-width);
-      padding: 32px 28px 48px;
-      line-height: 1.85;
-      font-size: 17px;
+      padding: 48px 48px 96px;
+      color: var(--xai-text-secondary);
+      line-height: 1.7;
+      font-size: 16px;
+      font-weight: 400;
     }
 
     .markdown-section h1,
     .markdown-section h2,
     .markdown-section h3 {
-      color: #111827;
-      font-weight: 700;
+      color: var(--xai-text);
+      font-weight: 400;
       letter-spacing: 0;
     }
 
     .markdown-section h1 {
       margin-top: 0;
-      font-size: 2rem;
+      margin-bottom: 48px;
+      color: var(--xai-text);
+      font-family: var(--xai-mono);
+      font-size: 48px;
+      font-weight: 300;
+      line-height: 1.16;
     }
 
     .markdown-section h2 {
-      margin-top: 2.1rem;
-      border-bottom: 1px solid #e5e7eb;
-      padding-bottom: 0.35rem;
+      margin-top: 48px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--xai-border);
+      padding-bottom: 8px;
+      font-size: 30px;
+      line-height: 1.2;
+    }
+
+    .markdown-section h3 {
+      margin-top: 32px;
+      margin-bottom: 16px;
+      font-size: 22px;
+      line-height: 1.25;
     }
 
     .markdown-section p {
-      margin: 0.85rem 0;
+      margin: 16px 0;
+    }
+
+    .markdown-section strong {
+      color: var(--xai-text);
+      font-weight: 400;
+    }
+
+    .markdown-section blockquote {
+      margin: 24px 0;
+      padding: 16px 24px;
+      border-left: 1px solid var(--xai-border-strong);
+      color: var(--xai-text-secondary);
+      background: var(--xai-surface);
+    }
+
+    .markdown-section code,
+    .markdown-section pre,
+    .markdown-section kbd {
+      font-family: var(--xai-mono);
+    }
+
+    .markdown-section code {
+      margin: 0 2px;
+      border: 1px solid var(--xai-border);
+      border-radius: 0;
+      background: var(--xai-surface);
+      color: var(--xai-text);
+      font-size: 0.92em;
+    }
+
+    .markdown-section pre {
+      border: 1px solid var(--xai-border);
+      border-radius: 0;
+      background: var(--xai-surface);
+    }
+
+    .markdown-section pre > code {
+      border: 0;
+      background: transparent;
+    }
+
+    .markdown-section table {
+      display: table;
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--xai-border);
+      color: var(--xai-text-secondary);
+    }
+
+    .markdown-section th,
+    .markdown-section td {
+      border: 1px solid var(--xai-border);
+      padding: 12px 16px;
+    }
+
+    .markdown-section th {
+      color: var(--xai-text);
+      font-weight: 400;
+    }
+
+    .markdown-section tr:nth-child(2n) {
+      background: var(--xai-surface);
+    }
+
+    .markdown-section hr {
+      border: 0;
+      border-top: 1px solid var(--xai-border);
     }
 
     .markdown-section img {
       max-width: 100%;
       height: auto;
-      border: 1px solid #e5e7eb;
-      background: #fff;
+      border: 1px solid var(--xai-border);
+      border-radius: 0;
+      background: #ffffff;
+      box-shadow: none;
     }
 
     .markdown-section div[align="center"] {
-      margin: 1.25rem 0 2rem;
-      color: #64748b;
-      font-size: 0.95rem;
+      margin: 24px 0 48px;
+      color: var(--xai-text-muted);
+      font-size: 14px;
     }
 
     .sidebar {
-      border-right: 1px solid #e5e7eb;
+      border-right: 1px solid var(--xai-border);
+      color: var(--xai-text);
+    }
+
+    .sidebar::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    .sidebar::-webkit-scrollbar-thumb,
+    body::-webkit-scrollbar-thumb {
+      background: var(--xai-border-strong);
+    }
+
+    .sidebar::-webkit-scrollbar-track,
+    body::-webkit-scrollbar-track {
+      background: var(--xai-bg);
+    }
+
+    .sidebar > h1 {
+      margin: 24px 24px 16px;
+      color: var(--xai-text);
+      font-family: var(--xai-mono);
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.4;
+      letter-spacing: 1.4px;
+    }
+
+    .sidebar > h1 a {
+      color: var(--xai-text);
+    }
+
+    .sidebar-nav {
+      padding: 8px 12px 48px;
+    }
+
+    .sidebar ul,
+    .sidebar ul li {
+      margin: 0;
+    }
+
+    .sidebar ul li {
+      list-style: none;
     }
 
     .sidebar ul li a {
+      display: block;
+      min-height: 44px;
+      margin: 0 0 8px;
+      border: 1px solid transparent;
+      padding: 12px 14px;
+      color: var(--xai-text-secondary);
+      font-family: var(--xai-mono);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-decoration: none;
+      text-transform: uppercase;
       white-space: normal;
       line-height: 1.55;
+    }
+
+    .sidebar ul li a:hover {
+      border-color: var(--xai-border);
+      background: var(--xai-surface);
+      color: var(--xai-text-muted);
+    }
+
+    .sidebar ul li.active > a,
+    .sidebar ul li a.active {
+      border-color: var(--xai-border-strong);
+      background: var(--xai-surface-hover);
+      color: var(--xai-text);
     }
 
     .sidebar .app-sub-sidebar {
       display: none !important;
     }
 
+    .search {
+      margin: 0;
+      border-bottom: 1px solid var(--xai-border);
+    }
+
+    .search .input-wrap {
+      margin: 16px 12px 12px;
+    }
+
     .search input {
-      font-size: 15px;
+      height: 44px;
+      border: 1px solid var(--xai-border-strong) !important;
+      border-radius: 0;
+      padding: 0 14px;
+      background: var(--xai-surface);
+      color: var(--xai-text);
+      font-family: var(--xai-sans);
+      font-size: 14px;
+      line-height: 44px;
+      outline: none;
+    }
+
+    .search input::placeholder {
+      color: var(--xai-text-faint);
+    }
+
+    .search input:focus {
+      border-color: var(--xai-border-strong);
+      box-shadow: 0 0 0 3px var(--xai-focus);
+    }
+
+    .search .clear-button svg circle {
+      fill: rgba(255, 255, 255, 0.2);
+    }
+
+    .search .results-panel {
+      border-top: 1px solid var(--xai-border);
+      background: var(--xai-bg);
+    }
+
+    .search .results-panel.show {
+      padding: 8px 12px 16px;
+    }
+
+    .search .matching-post {
+      border: 1px solid var(--xai-border);
+      border-radius: 0;
+      margin: 8px 0;
+      padding: 12px;
+      background: var(--xai-surface);
+    }
+
+    .search .matching-post:hover {
+      border-color: var(--xai-border-strong);
+      background: var(--xai-surface-hover);
+    }
+
+    .search .matching-post a {
+      color: var(--xai-text);
+      font-family: var(--xai-sans);
+      text-decoration: none;
+    }
+
+    .search .matching-post p {
+      color: var(--xai-text-muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .search .search-keyword {
+      color: var(--xai-text);
+      font-style: normal;
+      text-decoration: underline;
+      text-decoration-color: var(--xai-border-strong);
+      text-underline-offset: 3px;
+    }
+
+    .search .empty {
+      color: var(--xai-text-muted);
+    }
+
+    .sidebar-toggle {
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--xai-border);
+      border-left: 0;
+      border-bottom: 0;
+      padding: 14px;
+    }
+
+    .sidebar-toggle span {
+      background-color: var(--xai-text);
+    }
+
+    .anchor span {
+      color: inherit;
+    }
+
+    .anchor:hover {
+      text-decoration: none;
+    }
+
+    .markdown-section .anchor:hover span {
+      color: var(--xai-text-muted);
+    }
+
+    .pagination-item,
+    .pagination-item-label,
+    .pagination-item-title {
+      color: var(--xai-text);
+    }
+
+    button,
+    .button {
+      border-radius: 0;
+      box-shadow: none;
     }
 
     @media (max-width: 768px) {
       .markdown-section {
-        padding: 24px 18px 40px;
+        padding: 32px 24px 64px;
         font-size: 16px;
       }
 
       .markdown-section h1 {
-        font-size: 1.65rem;
+        margin-bottom: 32px;
+        font-size: 40px;
+        line-height: 1.2;
+      }
+
+      .markdown-section h2 {
+        margin-top: 40px;
+        font-size: 26px;
+      }
+
+      .sidebar {
+        border-right-color: var(--xai-border-strong);
       }
     }
   </style>
