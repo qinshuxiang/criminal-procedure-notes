@@ -1,8 +1,10 @@
 # 刑事诉讼法笔记
 
-> 笔记预览：https://qinshuxiang.github.io/criminal-procedure-notes/
+> <img src="./2026年法考客观题【精讲卷】刑诉法 众合左宁.png" alt="2026年法考客观题【精讲卷】刑诉法 众合左宁" style="zoom:50%;" />
 >
 > 2026年法考客观题【精讲卷】刑诉法 众合左宁： https://www.bilibili.com/video/BV1nLBVBPEh6/?share_source=copy_web&vd_source=c7fe14d55a6c34f49e2ec87f410d9724
+>
+> 笔记预览：https://qinshuxiang.github.io/criminal-procedure-notes/
 
 ## 学习目录
 
